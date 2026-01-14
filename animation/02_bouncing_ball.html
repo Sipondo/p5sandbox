@@ -49,15 +49,15 @@
             ellipse(x, y, diameter, diameter);
             
             // Move the ball
-            x = x + speedX;
-            y = y + speedY;
+            x += speedX;
+            y += speedY;
             
             // Bounce off edges
             if (x < diameter/2 || x > width - diameter/2) {
-                speedX = speedX * -1;
+                speedX *= -1;
             }
             if (y < diameter/2 || y > height - diameter/2) {
-                speedY = speedY * -1;
+                speedY *= -1;
             }
         }
     </script>
