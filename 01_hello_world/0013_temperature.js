@@ -73,7 +73,7 @@ function draw() {
   let step = floor(times.length / 6);
   for (let i = 0; i < times.length; i += step) {
     let x = map(times[i], times[0], times[times.length - 1], left, right);
-    text(times[i].toFixed(1), x, bottom + 5);
+    text(times[i].toFixed(0), x, bottom + 5);
   }
 
   // Axis titles
