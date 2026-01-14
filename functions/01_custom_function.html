@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Function - p5.js Functions</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Function</h1>
+    <div class="description">
+        <p>This sketch demonstrates creating custom functions. Functions help organize code and make it reusable.</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            
+            // Call our custom function multiple times
+            drawStar(100, 100, 40);
+            drawStar(300, 100, 50);
+            drawStar(200, 300, 60);
+        }
+
+        function draw() {
+            // Static drawing
+        }
+
+        // Custom function to draw a star
+        function drawStar(x, y, size) {
+            push();
+            translate(x, y);
+            fill(255, 200, 0);
+            stroke(0);
+            strokeWeight(2);
+            
+            beginShape();
+            for (let i = 0; i < 5; i++) {
+                let angle = TWO_PI * i / 5 - HALF_PI;
+                let sx = cos(angle) * size;
+                let sy = sin(angle) * size;
+                vertex(sx, sy);
+                angle = TWO_PI * (i + 0.5) / 5 - HALF_PI;
+                sx = cos(angle) * size * 0.5;
+                sy = sin(angle) * size * 0.5;
+                vertex(sx, sy);
+            }
+            endShape(CLOSE);
+            pop();
+        }
+    </script>
+</body>
+</html>

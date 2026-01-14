@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Pattern - p5.js Loops</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>For Loop Pattern</h1>
+    <div class="description">
+        <p>This sketch demonstrates using a <code>for</code> loop to create patterns. Loops allow you to repeat code efficiently.</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            
+            // Draw a row of circles using a loop
+            for (let i = 0; i < 8; i++) {
+                fill(255, 0, 0);
+                ellipse(50 + i * 50, 100, 40, 40);
+            }
+            
+            // Draw a column of squares using a loop
+            for (let i = 0; i < 6; i++) {
+                fill(0, 0, 255);
+                rect(50, 150 + i * 40, 30, 30);
+            }
+        }
+
+        function draw() {
+            // Static drawing
+        }
+    </script>
+</body>
+</html>

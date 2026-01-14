@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Rectangles - p5.js Shapes</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drawing Rectangles</h1>
+    <div class="description">
+        <p>This sketch demonstrates how to draw rectangles using the <code>rect()</code> function. Syntax: rect(x, y, width, height)</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            
+            // Draw a square
+            fill(255, 0, 0);
+            rect(50, 50, 80, 80);
+            
+            // Draw a rectangle
+            fill(0, 255, 0);
+            rect(200, 50, 120, 80);
+            
+            // Draw a rounded rectangle
+            fill(0, 0, 255);
+            rect(100, 200, 200, 100, 20);
+        }
+
+        function draw() {
+            // Static drawing
+        }
+    </script>
+</body>
+</html>

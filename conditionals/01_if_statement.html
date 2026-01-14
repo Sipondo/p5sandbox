@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Statement - p5.js Conditionals</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>If Statement</h1>
+    <div class="description">
+        <p>This sketch demonstrates conditional statements. The circle changes color depending on which half of the canvas your mouse is on.</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(220);
+            
+            // Draw a line dividing the canvas
+            stroke(0);
+            line(200, 0, 200, 400);
+            
+            // Change color based on mouse position
+            if (mouseX < 200) {
+                fill(255, 0, 0);
+            } else {
+                fill(0, 0, 255);
+            }
+            
+            ellipse(mouseX, mouseY, 50, 50);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loops Grid - p5.js Loops</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nested Loops Grid</h1>
+    <div class="description">
+        <p>This sketch demonstrates nested loops to create a 2D grid of shapes. One loop for rows, another for columns.</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            
+            // Draw a grid of circles using nested loops
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 6; j++) {
+                    fill(i * 40, j * 40, 150);
+                    ellipse(50 + i * 60, 50 + j * 60, 40, 40);
+                }
+            }
+        }
+
+        function draw() {
+            // Static drawing
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball - p5.js Animation</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bouncing Ball</h1>
+    <div class="description">
+        <p>This sketch shows a ball bouncing within the canvas. When it hits an edge, the direction reverses.</p>
+    </div>
+    <script>
+        let x = 200;
+        let y = 200;
+        let speedX = 3;
+        let speedY = 2;
+        let diameter = 30;
+
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(220);
+            
+            // Draw the ball
+            fill(0, 0, 255);
+            ellipse(x, y, diameter, diameter);
+            
+            // Move the ball
+            x = x + speedX;
+            y = y + speedY;
+            
+            // Bounce off edges
+            if (x < diameter/2 || x > width - diameter/2) {
+                speedX = speedX * -1;
+            }
+            if (y < diameter/2 || y > height - diameter/2) {
+                speedY = speedY * -1;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array with Objects - p5.js Arrays</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array with Objects</h1>
+    <div class="description">
+        <p>This sketch demonstrates storing objects in an array. Each ball has its own position and speed properties.</p>
+    </div>
+    <script>
+        let balls = [];
+
+        function setup() {
+            createCanvas(400, 400);
+            
+            // Create multiple ball objects
+            for (let i = 0; i < 5; i++) {
+                balls.push({
+                    x: random(width),
+                    y: random(height),
+                    speedX: random(-2, 2),
+                    speedY: random(-2, 2),
+                    size: random(20, 40)
+                });
+            }
+        }
+
+        function draw() {
+            background(220);
+            
+            // Update and draw each ball
+            for (let i = 0; i < balls.length; i++) {
+                let ball = balls[i];
+                
+                // Draw the ball
+                fill(0, 100, 200);
+                ellipse(ball.x, ball.y, ball.size, ball.size);
+                
+                // Move the ball
+                ball.x += ball.speedX;
+                ball.y += ball.speedY;
+                
+                // Bounce off edges
+                if (ball.x < 0 || ball.x > width) {
+                    ball.speedX *= -1;
+                }
+                if (ball.y < 0 || ball.y > height) {
+                    ball.speedY *= -1;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

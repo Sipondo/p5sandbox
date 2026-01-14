@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Circles - p5.js Arrays</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array of Circles</h1>
+    <div class="description">
+        <p>This sketch demonstrates using arrays to store multiple values. We use arrays to store x positions of multiple circles.</p>
+    </div>
+    <script>
+        let xPositions = [50, 150, 250, 350];
+
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(220);
+            
+            // Draw circles at positions stored in array
+            fill(255, 0, 0);
+            for (let i = 0; i < xPositions.length; i++) {
+                ellipse(xPositions[i], 200, 60, 60);
+                
+                // Move each circle
+                xPositions[i] = xPositions[i] + 1;
+                
+                // Wrap around if off screen
+                if (xPositions[i] > width) {
+                    xPositions[i] = 0;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

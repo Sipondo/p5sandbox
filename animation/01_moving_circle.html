@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Circle - p5.js Animation</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Moving Circle</h1>
+    <div class="description">
+        <p>This sketch demonstrates basic animation by changing a variable's value in the <code>draw()</code> function. The circle moves across the screen.</p>
+    </div>
+    <script>
+        let x = 0;
+
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(220);
+            
+            // Draw a circle at position x
+            fill(255, 0, 0);
+            ellipse(x, 200, 50, 50);
+            
+            // Move the circle
+            x = x + 2;
+            
+            // Reset position when it goes off screen
+            if (x > width) {
+                x = 0;
+            }
+        }
+    </script>
+</body>
+</html>

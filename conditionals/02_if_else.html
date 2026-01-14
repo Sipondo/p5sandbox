@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else Statement - p5.js Conditionals</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>If-Else Statement</h1>
+    <div class="description">
+        <p>This sketch demonstrates if-else statements. The shape changes between a circle and square based on mouse position.</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(220);
+            
+            fill(100, 200, 100);
+            
+            // Draw different shapes based on mouse y position
+            if (mouseY < 200) {
+                ellipse(200, 200, 100, 100);
+            } else {
+                rect(150, 150, 100, 100);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparency (Alpha) - p5.js Colors</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transparency (Alpha)</h1>
+    <div class="description">
+        <p>This sketch demonstrates transparency using the alpha channel. The fourth parameter in <code>fill(r, g, b, alpha)</code> controls transparency (0-255).</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            noStroke();
+            
+            // Fully opaque circle
+            fill(255, 0, 0, 255);
+            ellipse(150, 150, 100, 100);
+            
+            // Semi-transparent circle
+            fill(0, 255, 0, 127);
+            ellipse(200, 150, 100, 100);
+            
+            // More transparent circle
+            fill(0, 0, 255, 64);
+            ellipse(250, 150, 100, 100);
+            
+            // Overlapping shapes
+            fill(255, 0, 0, 100);
+            rect(100, 250, 100, 100);
+            fill(0, 0, 255, 100);
+            rect(150, 250, 100, 100);
+        }
+
+        function draw() {
+            // Static drawing
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Ellipses - p5.js Shapes</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drawing Ellipses</h1>
+    <div class="description">
+        <p>This sketch demonstrates how to draw ellipses and circles using the <code>ellipse()</code> function. Syntax: ellipse(x, y, width, height)</p>
+    </div>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            background(220);
+            
+            // Draw a circle
+            fill(255, 0, 0);
+            ellipse(100, 100, 80, 80);
+            
+            // Draw an ellipse
+            fill(0, 255, 0);
+            ellipse(300, 100, 120, 80);
+            
+            // Draw another ellipse
+            fill(0, 0, 255);
+            ellipse(200, 250, 80, 120);
+        }
+
+        function draw() {
+            // Static drawing
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Sandbox - Learning Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #ED225D;
+            text-align: center;
+        }
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .topic {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .topic h2 {
+            color: #2D7BB6;
+            margin-top: 0;
+            border-bottom: 2px solid #ED225D;
+            padding-bottom: 10px;
+        }
+        .sketch-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sketch-list li {
+            margin: 10px 0;
+        }
+        .sketch-list a {
+            color: #2D7BB6;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: inline-block;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sketch-list a:hover {
+            background-color: #ED225D;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 p5.js Sandbox</h1>
+    
+    <div class="intro">
+        <p><strong>Welcome!</strong> This is a collection of basic p5.js sketches organized by programming topic. Each sketch demonstrates a fundamental programming concept using visual examples.</p>
+        <p>p5.js is a JavaScript library that makes coding accessible for artists, designers, educators, and beginners. Click on any sketch below to see it in action!</p>
+    </div>
+
+    <div class="topic">
+        <h2>📚 Basics</h2>
+        <p>Start here! Learn about the canvas and basic drawing functions.</p>
+        <ul class="sketch-list">
+            <li><a href="basics/01_simple_canvas.html">Simple Canvas</a> - Creating a basic p5.js canvas</li>
+            <li><a href="basics/02_drawing_point.html">Drawing a Point</a> - How to draw points</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🔷 Shapes</h2>
+        <p>Learn to draw different shapes like circles, rectangles, and triangles.</p>
+        <ul class="sketch-list">
+            <li><a href="shapes/01_ellipse.html">Drawing Ellipses</a> - Circles and ellipses</li>
+            <li><a href="shapes/02_rectangles.html">Drawing Rectangles</a> - Squares and rectangles</li>
+            <li><a href="shapes/03_lines_triangles.html">Lines and Triangles</a> - Lines and triangles</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🎨 Colors</h2>
+        <p>Explore how colors work in p5.js using RGB values and transparency.</p>
+        <ul class="sketch-list">
+            <li><a href="colors/01_rgb_colors.html">RGB Colors</a> - Understanding RGB color mode</li>
+            <li><a href="colors/02_alpha_transparency.html">Transparency (Alpha)</a> - Using alpha for transparency</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🎬 Animation</h2>
+        <p>Make things move! Learn the basics of animation.</p>
+        <ul class="sketch-list">
+            <li><a href="animation/01_moving_circle.html">Moving Circle</a> - Basic movement animation</li>
+            <li><a href="animation/02_bouncing_ball.html">Bouncing Ball</a> - Ball that bounces off walls</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🖱️ Interaction</h2>
+        <p>Make your sketches interactive with mouse and keyboard input.</p>
+        <ul class="sketch-list">
+            <li><a href="interaction/01_mouse_position.html">Mouse Position</a> - Following the mouse cursor</li>
+            <li><a href="interaction/02_mouse_click.html">Mouse Click</a> - Responding to mouse clicks</li>
+            <li><a href="interaction/03_keyboard_input.html">Keyboard Input</a> - Using arrow keys for control</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🔁 Loops</h2>
+        <p>Use loops to repeat actions and create patterns efficiently.</p>
+        <ul class="sketch-list">
+            <li><a href="loops/01_for_loop.html">For Loop Pattern</a> - Creating patterns with loops</li>
+            <li><a href="loops/02_nested_loops.html">Nested Loops Grid</a> - Using nested loops for 2D grids</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>🔀 Conditionals</h2>
+        <p>Make decisions in your code with if/else statements.</p>
+        <ul class="sketch-list">
+            <li><a href="conditionals/01_if_statement.html">If Statement</a> - Basic conditional logic</li>
+            <li><a href="conditionals/02_if_else.html">If-Else Statement</a> - Multiple conditions</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>📊 Arrays</h2>
+        <p>Store and manage multiple values using arrays.</p>
+        <ul class="sketch-list">
+            <li><a href="arrays/01_array_circles.html">Array of Circles</a> - Storing positions in arrays</li>
+            <li><a href="arrays/02_array_objects.html">Array with Objects</a> - Arrays of objects</li>
+        </ul>
+    </div>
+
+    <div class="topic">
+        <h2>⚙️ Functions</h2>
+        <p>Create reusable code with custom functions.</p>
+        <ul class="sketch-list">
+            <li><a href="functions/01_custom_function.html">Custom Function</a> - Creating your own functions</li>
+            <li><a href="functions/02_return_values.html">Function Return Values</a> - Functions that return values</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Built with ❤️ using <a href="https://p5js.org/" target="_blank">p5.js</a></p>
+    </footer>
+</body>
+</html>
