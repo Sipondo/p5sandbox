@@ -19,7 +19,7 @@ function draw() {
             // Bottom-left
             text('Bottom-left', 20, 30);
             fill(180, 180, 220);
-            rect(50, 200, 120, 120);
+            rect(50, 400, 120, 120);
         }
     } else {
         // Right half
@@ -27,12 +27,12 @@ function draw() {
             // Top-right
             text('Top-right', 20, 30);
             fill(220, 180, 180);
-            rect(230, 60, 120, 120);
+            rect(430, 60, 120, 120);
         } else {
             // Bottom-right
             text('Bottom-right', 20, 30);
             fill(220, 220, 180);
-            rect(230, 200, 120, 120);
+            rect(430, 400, 120, 120);
         }
     }
 }
