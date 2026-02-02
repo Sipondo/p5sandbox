@@ -6,11 +6,11 @@ function setup() {
 
 function draw() {
     background(220);
+    fill(255, 0, 0);
     
     // Draw circles at positions stored in array
-    fill(255, 0, 0);
-    for (let i = 0; i < xPositions.length; i++) {
-        ellipse(xPositions[i], 200, 60, 60);
+    xPositions.forEach(function(x, i) {
+        ellipse(x, 200, 60, 60);
         
         // Move each circle
         xPositions[i] += 1;
@@ -19,5 +19,5 @@ function draw() {
         if (xPositions[i] > width) {
             xPositions[i] = 0;
         }
-    }
+    });
 }
