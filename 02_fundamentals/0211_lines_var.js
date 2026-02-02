@@ -6,12 +6,19 @@ function setup() {
     textSize(48); // big text
 
     let verticalPosition = 100;
-
     text("Sentence 1", 100, verticalPosition);
-    text("Sentence 2", 100, verticalPosition + 50);
-    text("Sentence 3", 100, verticalPosition + 100);
-    text("Sentence 4", 100, verticalPosition + 150);
-    text("Sentence 5", 100, verticalPosition + 200);
+
+    verticalPosition += 50;
+    text("Sentence 2", 100, verticalPosition);
+
+    verticalPosition += 50;
+    text("Sentence 3", 100, verticalPosition);
+
+    verticalPosition += 50;
+    text("Sentence 4", 100, verticalPosition);
+    
+    verticalPosition += 50;
+    text("Sentence 5", 100, verticalPosition);
 }
 
 function draw() {
