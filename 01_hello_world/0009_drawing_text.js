@@ -19,5 +19,5 @@ function setup() {
 }
 
 function draw() {
-    // Static drawing
+    // No animation needed for this demonstration
 }

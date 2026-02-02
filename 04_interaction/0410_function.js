@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-    // Static drawing
+    // No animation needed for this demonstration
 }
 
 // Custom function to draw a star
