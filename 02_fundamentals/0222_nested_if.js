@@ -1,11 +1,11 @@
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(600, 600);
 }
 
 function draw() {
     background(220);
     // Nested if: decide which quadrant the mouse is in
-    textSize(20);
+    textSize(40);
     fill(0);
 
     if (mouseX < width / 2) {

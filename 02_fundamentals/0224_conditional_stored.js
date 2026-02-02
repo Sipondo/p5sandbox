@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(600, 600);
 }
 
 function draw() {
@@ -7,7 +7,7 @@ function draw() {
 
     // Show current mouse coordinates
     fill(0);
-    textSize(16);
+    textSize(32);
     text('mouseX: ' + mouseX + '  mouseY: ' + mouseY, 10, 20);
     // Store conditions in variables
     let inRightHalf = mouseX > width / 2;
