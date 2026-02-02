@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(400, 300);
+  createCanvas(500, 500);
   textSize(48);
 }
 
@@ -16,6 +16,6 @@ function draw() {
   fill(0);
   text("x: " + mouseX + " offset: " + (mouseX + 50), 20, 40);
   text("y: " + mouseY, 20, 100);
-  text("divided: " + (mouseX / 2), 20, 220);
-  text("frameCount: " + frameCount, 20, 280);
+  text("divided: " + (mouseX / 2), 20, 370);
+  text("frameCount: " + frameCount, 20, 430);
 }
