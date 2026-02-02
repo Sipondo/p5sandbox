@@ -8,7 +8,9 @@ function draw() {
     // Show current mouse coordinates
     fill(0);
     textSize(32);
-    text('mouseX: ' + mouseX + '  mouseY: ' + mouseY, 10, 20);
+    text('mouseX: ' + mouseX, 10, 50);
+    text('mouseY: ' + mouseY, 10, 100);
+
     // Store conditions in variables
     let inRightHalf = mouseX > width / 2;
     let inBottomHalf = mouseY > height / 2;
@@ -17,20 +19,20 @@ function draw() {
     let orCondition = inRightHalf || inBottomHalf;  // one or both true
 
     // Show the stored boolean results
-    text('inRightHalf: ' + inRightHalf, 10, 60);
-    text('inBottomHalf: ' + inBottomHalf, 10, 80);
-    text('AND (inRightHalf && inBottomHalf): ' + andCondition, 10, 110);
-    text('OR  (inRightHalf || inBottomHalf): ' + orCondition, 10, 130);
+    text('inRightHalf: ' + inRightHalf, 10, 250);
+    text('inBottomHalf: ' + inBottomHalf, 10, 300);
+    text('AND (inRightHalf && inBottomHalf): ' + andCondition, 10, 400);
+    text('OR  (inRightHalf || inBottomHalf): ' + orCondition, 10, 450);
 
     // Use stored booleans in the conditionals
     if (andCondition) {
         fill(0, 200, 0);
-        ellipse(width - 60, 60, 40);
+        circle(width / 2, height / 2, 120);
     } else if (orCondition) {
         fill(255, 140, 0);
-        rect(width - 90, 40, 60, 40);
+        rect(width / 2, height / 2, 120, 80);
     } else {
         fill(150);
-        ellipse(width - 60, 60, 30);
+        circle(width / 2, height / 2, 80);
     }
 }
