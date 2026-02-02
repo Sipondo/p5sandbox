@@ -20,10 +20,10 @@ function draw() {
     y += speedY;
     
     // Bounce off edges
-    if (x < diameter/2 || x > width - diameter/2) {
+    if (x < 0 || x > width) {
         speedX *= -1;
     }
-    if (y < diameter/2 || y > height - diameter/2) {
+    if (y < 0 || y > height) {
         speedY *= -1;
     }
 }
