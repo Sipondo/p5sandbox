@@ -11,9 +11,9 @@ function draw() {
     
     // Change color based on mouse position
     if (mouseX < 200) {
-        fill(255, 0, 0);
+        fill(255, 0, 0); // red
     } else {
-        fill(0, 0, 255);
+        fill(0, 0, 255); // blue
     }
     
     ellipse(mouseX, mouseY, 50, 50);
