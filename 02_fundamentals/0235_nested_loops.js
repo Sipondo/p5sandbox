@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(600, 600);
     background(220);
     
     // Draw a grid of circles using nested loops

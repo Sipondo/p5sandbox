@@ -1,7 +1,7 @@
 let xPositions = [50, 150, 250, 350];
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(600, 600);
 }
 
 function draw() {
