@@ -6,7 +6,7 @@ function setup() {
     let interestingNumber = 42;
 
     // Draw the initial value as text
-    textSize(24);
+    textSize(36);
     text('interestingNumber: ' + interestingNumber, 20, 60);
 
     // Reassign to a new value
