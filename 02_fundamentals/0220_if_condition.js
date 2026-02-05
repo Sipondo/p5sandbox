@@ -9,7 +9,7 @@ function draw() {
     stroke(0);
     line(200, 0, 200, 400);
     
-    // Change color based on mouse position
+    // Change colour based on mouse position
     if (mouseX < 200) {
         fill(255, 0, 0); // red
     } else {
