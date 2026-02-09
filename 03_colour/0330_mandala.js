@@ -7,25 +7,23 @@ function setup() {
 
 
 function draw() {
+    // Thicker lines for the mandala strokes.
     strokeWeight(5);
 
-    translate(width / 2, height / 2);
+    // Draw around the center of the canvas.
+    let offsetX = width / 2;
+    let offsetY = height / 2;
+    translate(offsetX, offsetY);
 
-    let lineStartX = mouseX - width / 2;
-    let lineStartY = mouseY - height / 2;
-    let lineEndX = pmouseX - width / 2;
-    let lineEndY = pmouseY - height / 2;
+    // Convert mouse position to the centered coordinate system.
+    let lineStartX = mouseX - offsetX;
+    let lineStartY = mouseY - offsetY;
+    let lineEndX = pmouseX - offsetX;
+    let lineEndY = pmouseY - offsetY;
 
-    if (mouseIsPressed) {
-      for (let i = 0; i < symmetry; i++) {
-        
-        line(lineStartX, lineStartY, lineEndX, lineEndY);
-        rotate(360 / symmetry);
-
-        push();
-        scale(1, -1);
-        line(lineStartX, lineStartY, lineEndX, lineEndY);
-        pop();
-      }
-  }
+    // Repeat the stroke around the circle.
+    for (let i = 0; i < symmetry; i++) {
+      line(lineStartX, lineStartY, lineEndX, lineEndY);
+      rotate(360 / symmetry);
+    }
 }
