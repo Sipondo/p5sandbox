@@ -2,6 +2,7 @@ let symmetry = 12;
 
 function setup() {
   createCanvas(600, 600);
+  background(230);
   angleMode(DEGREES)
 }
 
