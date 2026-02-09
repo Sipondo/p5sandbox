@@ -1,13 +1,16 @@
 function setup() {
     createCanvas(600, 400);
     angleMode(DEGREES);
-    
+
     // Base blue background.
     background(0, 36, 125);
 
     // Draw from the center for easier rotation.
     translate(width / 2, height / 2);
+
+    // This nifty function makes it easy to draw rectangles from the center. We have not discussed this in class, but you can find it in the p5js reference
     rectMode(CENTER);
+
     noStroke();
 
     // White diagonals.
