@@ -21,7 +21,7 @@ function setup() {
     rect(190, 190, 130, 130);
 
     // Overlap the image again with alpha
-    tint(255, 100); // Apply a semi-transparent tint to the image
+    tint(255, 255, 255, 100); // Apply a semi-transparent tint to the image
     image(catImage, 80, 80, 200, 200); // Draw the image again with the tint
 }
 
