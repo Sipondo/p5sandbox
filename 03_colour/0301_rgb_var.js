@@ -1,4 +1,4 @@
-// Define colors as variables using color() constructor
+// Define colors as variables using color()
 let red = color(255, 0, 0);
 let green = color(0, 255, 0);
 let blue = color(0, 0, 255);
