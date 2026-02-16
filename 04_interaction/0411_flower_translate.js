@@ -1,6 +1,7 @@
 function setup() {
 	createCanvas(400, 400);
 	rectMode(CENTER); // Draw rectangles from center
+	noStroke();
 }
 
 function draw() {
@@ -11,7 +12,6 @@ function draw() {
 
 	// Center of flower
 	fill(240, 140, 80);
-	noStroke();
 	ellipse(0, 0, 80, 80);
 
 	// Petals
