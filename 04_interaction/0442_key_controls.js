@@ -29,6 +29,7 @@ function draw() {
 
 	// Instructions
 	fill(0);
-	textSize(14);
+	textSize(24);
 	text("Use arrow keys to move the circle", 20, 30);
+    text("(may need to click canvas first)", 20, 70);
 }
