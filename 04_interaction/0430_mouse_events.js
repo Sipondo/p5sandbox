@@ -31,7 +31,6 @@ function mousePressed() {
 function mouseReleased() {
 	// Called when the mouse button is released
 	isPressed = false;
-	trails = []; // clear the trail
 }
 
 function mouseClicked() {
