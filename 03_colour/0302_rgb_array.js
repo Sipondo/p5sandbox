@@ -1,15 +1,19 @@
-// Define colors in a palette array
-let palette = [
-    color(255, 0, 0),    // Red
-    color(0, 255, 0),    // Green
-    color(0, 0, 255),    // Blue
-    color(0, 255, 255),  // Cyan
-    color(255, 0, 255),  // Magenta
-    color(255, 255, 0)   // Yellow
-];
+// p5js can be picky about defining this pre-setup, so we initialise an empty variable first
+// and set it to the array in setup()
+let palette;
 
 function setup() {
     createCanvas(400, 400);
+  
+    // Define colors in a palette array
+    palette = [
+        color(255, 0, 0),    // Red
+        color(0, 255, 0),    // Green
+        color(0, 0, 255),    // Blue
+        color(0, 255, 255),  // Cyan
+        color(255, 0, 255),  // Magenta
+        color(255, 255, 0)   // Yellow
+    ];
 
     // Black
     background(0); // This is also a colour!
