@@ -16,8 +16,5 @@ function draw() {
 function mousePressed() {
 	userStartAudio(); // Start the audio context on a user gesture (required in some browsers)
 
-	let note = round(map(mouseX, 0, width, 100, 1000)); // Map x to frequencies
-	let length = map(mouseY, height, 0, 0, 1); // Map y to note length (0 to 1 seconds)
-
-	mono.play(note, 1, 0, length); // Play note
+	mono.play("A4", 1, 0, 1); // Play note
 }
