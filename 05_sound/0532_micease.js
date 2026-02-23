@@ -9,6 +9,10 @@ function setup() {
 	mic.start();
 }
 
+function mousePressed() {
+	userStartAudio(); // Start the audio context on a user gesture (required in some browsers)
+}
+
 function draw() {
 	background(230);
 

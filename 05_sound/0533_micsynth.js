@@ -8,6 +8,10 @@ function setup() {
   mic.start(); // Start the audio input
 }
 
+function mousePressed() {
+	userStartAudio(); // Start the audio context on a user gesture (required in some browsers)
+}
+
 function draw() {
   fill("black");
   background(230);
@@ -15,8 +19,6 @@ function draw() {
   text("Click to play", 20, 65);
 
   if (mouseIsPressed) {
-    userStartAudio(); // Start the audio context on a user gesture (required in some browsers)
-
     let level = mic.getLevel(); // Get current mic level (0.0 - ~1.0)
     let note = round(map(level, 0, 1, 100, 1000)); // Map x to frequencies
     let length = map(mouseY, height, 0, 0, 1); // Map y to note length (0 to 1 seconds)

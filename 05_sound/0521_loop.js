@@ -16,6 +16,7 @@ function draw() {
 }
 
 function mousePressed() {
+  userStartAudio(); // Start audio
   soundFile.loop(); // Loop instead of play
   background(0, 200, 50); // Turn the background green
 }
