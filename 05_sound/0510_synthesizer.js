@@ -16,5 +16,5 @@ function draw() {
 function mousePressed() {
 	userStartAudio(); // Start the audio context on a user gesture (required in some browsers)
 
-	mono.play("A4", 1, 0, 1); // Play note
+	mono.play("A4", 1, 0, 1); // Play note: note, volume, start time, duration
 }
