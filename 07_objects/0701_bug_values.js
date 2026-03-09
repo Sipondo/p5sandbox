@@ -13,7 +13,11 @@ function draw() {
   background(245);
 
   x += speed;
-  speed = speed * 1.2; // BUG: speed keeps exploding every frame
+  speed = speed * 1.2;
+
+  if (x > width + 25) {
+    x = 0; // Reset circle position when off screen
+  }
 
   fill(245, 120, 70);
   circle(x, height * 0.5, 42);

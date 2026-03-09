@@ -15,7 +15,6 @@ function draw() {
   background(245);
 
   targetX = mouseX;
-  // BUG: targetY is never assigned, so y becomes NaN
 
   x += (targetX - x) * 0.08;
   y += (targetY - y) * 0.08;

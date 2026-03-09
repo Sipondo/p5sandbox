@@ -1,5 +1,5 @@
 // Debug challenge 1: no output.
-// Goal: show a moving circle on a light background.
+// Goal: show a moving circle
 
 let x = 40;
 
@@ -8,10 +8,10 @@ function setup() {
 }
 
 function draw() {
-  backgrounnd(245); // BUG: typo in function name
+  background(245);
 
-  fill(40, 140, 230);
-  noStroke();
+  fill(245);
+  nostroke();
   circle(x, height * 0.5, 50);
 
   x += 2;

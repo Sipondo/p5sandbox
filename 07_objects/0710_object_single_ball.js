@@ -1,4 +1,4 @@
-let ball = {
+let ball = { // Init an object
   x: 120,
   y: 200,
   size: 48,
@@ -16,9 +16,13 @@ function draw() {
 
   ball.x += ball.speedX;
   ball.y += ball.speedY;
-
-  if (ball.x < ball.size / 2 || ball.x > width - ball.size / 2) ball.speedX *= -1;
-  if (ball.y < ball.size / 2 || ball.y > height - ball.size / 2) ball.speedY *= -1;
+  
+  if (ball.x < 0 || ball.x > width){
+    ball.speedX *= -1; // Bounce horizontally
+  }
+  if (ball.y < 0 || ball.y > height){
+    ball.speedY *= -1; // Bounce vertically
+  }
 
   fill(20);
   textSize(16);
@@ -29,6 +33,6 @@ function draw() {
 
   fill(20);
   textSize(13);
-  text('ball.x: ' + ball.x.toFixed(1), 20, 350);
-  text('ball.speedX: ' + ball.speedX.toFixed(1), 20, 370);
+  text('ball.x: ' + ball.x, 20, 350);
+  text('ball.speedX: ' + ball.speedX, 20, 370);
 }
