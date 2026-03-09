@@ -1,57 +1,39 @@
 let circles = [];
-let guardCount = 0;
+
+function createCircle() {
+  return {
+    x: random(width),
+    y: random(height),
+    size: random(20, 60),
+    r: random(80, 255),
+    g: random(80, 255),
+    b: random(80, 255)
+  };
+}
 
 function setup() {
   createCanvas(700, 400);
   noStroke();
 
-  let guard = 0;
-
-  // Spawn circles with while until we have enough valid candidates.
-  while (circles.length < 24 && guard < 6000) {
-    guard++;
-
-    let candidate = {
-      x: random(40, width - 40),
-      y: random(80, height - 40),
-      r: random(10, 22),
-      hue: random(170, 280)
-    };
-
-    if (!overlapsExisting(candidate)) {
-      circles.push(candidate);
-    }
+  // Make 20 random circles using circles.length as the condition.
+  while (circles.length < 20) {
+    circles.push(createCircle());
   }
-
-  guardCount = guard;
 }
 
 function draw() {
-  background(247);
-  colorMode(HSL, 360, 100, 100);
+  background(245);
 
-  circles.forEach(c => {
-    fill(c.hue, 75, 55, 0.85);
-    circle(c.x, c.y, c.r * 2);
-  });
-
-  colorMode(RGB, 255);
-  fill(20);
-  textSize(16);
-  text('while spawn: keep trying until we have enough valid circles', 20, 28);
-  textSize(13);
-  text('circles: ' + circles.length + ' | while iterations: ' + guardCount, 20, 48);
-}
-
-function overlapsExisting(candidate) {
-  for (let i = 0; i < circles.length; i++) {
+  // Draw circles with another while loop.
+  let i = 0;
+  while (i < circles.length) {
     let c = circles[i];
-    let d = dist(candidate.x, candidate.y, c.x, c.y);
-
-    if (d < candidate.r + c.r + 4) {
-      return true;
-    }
+    fill(c.r, c.g, c.b, 180);
+    circle(c.x, c.y, c.size);
+    i++;
   }
 
-  return false;
+  fill(20);
+  textSize(16);
+  text('Simple while loop example (no forEach)', 20, 30);
 }

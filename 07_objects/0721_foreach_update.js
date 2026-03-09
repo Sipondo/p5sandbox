@@ -1,54 +1,39 @@
-let particles = [];
+let bubbleArray = [];
 
 function setup() {
   createCanvas(700, 400);
-
-  for (let i = 0; i < 18; i++) {
-    particles.push(makeParticle(random(width), random(height)));
-  }
 }
 
 function draw() {
-  background(242);
+  background(235, 244, 255);
 
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
+  // forEach: apply the same update + draw steps to every bubble.
+  bubbleArray.forEach(bubble => {
+    bubble.y -= bubble.speed;
 
-    if (p.x < p.r || p.x > width - p.r) p.vx *= -1;
-    if (p.y < p.r || p.y > height - p.r) p.vy *= -1;
+    // When a bubble leaves the top, move it back to the bottom.
+    if (bubble.y < -bubble.size) {
+      bubble.y = height + bubble.size;
+      bubble.x = random(width);
+    }
 
-    p.alpha = 150 + sin(frameCount * 0.05 + p.phase) * 80;
-
-    fill(p.red, p.green, p.blue, p.alpha);
-    noStroke();
-    circle(p.x, p.y, p.r * 2);
+    fill(bubble.r, bubble.g, bubble.b, 170);
+    circle(bubble.x, bubble.y, bubble.size);
   });
-
-  fill(20);
-  textSize(16);
-  text('forEach update: one update/draw rule applied to every object', 20, 28);
-  textSize(13);
-  text('particles: ' + particles.length + ' | press mouse to add 5', 20, 48);
 }
 
 function mousePressed() {
-  for (let i = 0; i < 5; i++) {
-    particles.push(makeParticle(mouseX + random(-15, 15), mouseY + random(-15, 15)));
-  }
+  bubbleArray.push(createBubble(mouseX, mouseY)); // Add bubble
 }
 
-function makeParticle(x, y) {
+function createBubble(x, y) {
   return {
-    x: constrain(x, 10, width - 10),
-    y: constrain(y, 10, height - 10),
-    vx: random(-2.2, 2.2),
-    vy: random(-2.2, 2.2),
-    r: random(8, 18),
-    red: random(80, 255),
-    green: random(80, 220),
-    blue: random(120, 255),
-    alpha: random(120, 230),
-    phase: random(TWO_PI)
+    x: x,
+    y: y,
+    size: random(18, 46),
+    speed: random(0.8, 2.4),
+    r: random(120, 180),
+    g: random(180, 230),
+    b: random(230, 255)
   };
 }
