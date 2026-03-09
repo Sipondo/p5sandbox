@@ -10,7 +10,7 @@ function draw() {
     
     // Pointed heart (mixing vertex and bezierVertex)
     push();
-	translate(width / 4, height / 2);
+	translate(width / 4, height / 4);
 	beginShape(); // start defining a heart shape
     vertex(0, 150); // south point
     vertex(-100, 0); // bottom left
@@ -22,7 +22,7 @@ function draw() {
     
     // Round heart (only bezierVertex)
     push();
-  	translate(3 * width / 4, height / 2);
+  	translate(3 * width / 4, height / 4);
   	beginShape(); // start defining a heart shape
     vertex(0, 100); // south point
     bezierVertex(-90, 35, -95, 30, -100, 0); // bottom left
