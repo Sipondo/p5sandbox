@@ -8,7 +8,6 @@ let ball = { // Init an object
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
 }
 
 function draw() {

@@ -2,7 +2,6 @@ let particles = [];
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
 
   for (let i = 0; i < 18; i++) {
     particles.push(makeParticle(random(width), random(height)));

@@ -3,7 +3,6 @@ let guardCount = 0;
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
   noStroke();
 
   let guard = 0;

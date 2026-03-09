@@ -6,7 +6,6 @@ let ballSpeedY = 1.8;
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
 }
 
 function draw() {

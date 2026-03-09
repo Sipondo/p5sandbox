@@ -6,7 +6,6 @@ let speed = 2;
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
 }
 
 function draw() {

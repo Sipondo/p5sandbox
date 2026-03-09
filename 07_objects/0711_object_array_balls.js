@@ -14,7 +14,6 @@ function createBall() {
 
 function setup() {
   createCanvas(700, 400);
-  textFont('monospace');
 
   // Build an initial collection of balls.
   for (let i = 0; i < 12; i++) {
