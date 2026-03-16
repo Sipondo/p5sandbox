@@ -24,8 +24,8 @@ function draw() {
   text("Temperature: " + nf(tempC, 1, 1) + " C", 20, 90);
   text("Wind speed: " + nf(wind, 1, 1) + " km/h", 20, 112);
 
-  var circleSize = map(tempC, -5, 30, 40, 220, true);
-  var lineCount = int(map(wind, 0, 40, 3, 35, true));
+  let circleSize = map(tempC, -5, 30, 40, 220, true);
+  let lineCount = int(map(wind, 0, 40, 3, 35, true));
 
   noStroke();
   fill(255, map(tempC, -5, 30, 130, 20, true), 40, 190);
@@ -34,14 +34,14 @@ function draw() {
   stroke(30, 90, 170);
   strokeWeight(2);
   for (let i = 0; i < lineCount; i++) {
-    var y = 200 + i * 6;
+    let y = 200 + i * 6;
     line(430, y, 430 + random(90, 260), y + random(-8, 8));
   }
 }
 
 function fetchWeather() {
   statusText = "Loading weather...";
-  var url = "https://api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&current=temperature_2m,wind_speed_10m";
+  let url = "https://api.open-meteo.com/v1/forecast?latitude=55.6761&longitude=12.5683&current=temperature_2m,wind_speed_10m";
   fetch(url)
     .then((r) => r.json())
     .then((json) => {

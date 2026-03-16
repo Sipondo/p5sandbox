@@ -1,4 +1,4 @@
-var CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
+let CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
 let table;
 
 let cities = ["Copenhagen", "Aarhus", "Odense", "Aalborg"]; // Hardcoded list of cities. We could also grab this from the table directly!
@@ -26,8 +26,8 @@ function draw() {
 
   // Same display logic
   for (let i = 0; i < rows.length; i++) {
-    var row = rows[i];
-    var line = "week=" + row.get("week") + "  temp=" + row.get("tempC") + "C";
+    let row = rows[i];
+    let line = "week=" + row.get("week") + "  temp=" + row.get("tempC") + "C";
     text(line, 20, 75 + i * 30);
   }
 }

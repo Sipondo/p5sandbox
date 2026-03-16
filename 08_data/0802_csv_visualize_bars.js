@@ -1,4 +1,4 @@
-var CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/music_events.csv";
+let CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/music_events.csv";
 let events;
 
 function preload() {
@@ -15,24 +15,24 @@ function draw() {
   text("CSV -> visualization (bar chart)", 20, 35);
 
   // Layout values for the chart area
-  var startX = 40;
-  var barWidth = 90;
-  var gap = 50;
+  let startX = 40;
+  let barWidth = 90;
+  let gap = 50;
 
   // Convert attendees to pixels with a fixed multiplier
-  var pixelsPerPerson = 0.8;
+  let pixelsPerPerson = 0.8;
 	
   // We only have room for 4
   for (let i = 0; i < min(4, events.getRowCount()); i++) {
     // Grab data for colunmn
-    var row = events.getRow(i);
-    var name = row.getString("event");
-    var attendees = row.getNum("attendees");
-    var energy = row.getNum("energy");
+    let row = events.getRow(i);
+    let name = row.getString("event");
+    let attendees = row.getNum("attendees");
+    let energy = row.getNum("energy");
 		
     // Calculate location and height
-    var x = startX + i * (barWidth + gap);
-    var h = attendees * pixelsPerPerson;
+    let x = startX + i * (barWidth + gap);
+    let h = attendees * pixelsPerPerson;
 
     // Color bands: low, medium, high energy
     if (energy < 0.34) {

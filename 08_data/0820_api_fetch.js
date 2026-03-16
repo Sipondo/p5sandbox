@@ -1,4 +1,4 @@
-var API_URL = "https://api.open-meteo.com/v1/forecast?latitude=52.37&longitude=4.90&current=temperature_2m,wind_speed_10m";
+let API_URL = "https://api.open-meteo.com/v1/forecast?latitude=52.37&longitude=4.90&current=temperature_2m,wind_speed_10m";
 let weather;
 
 function preload() {

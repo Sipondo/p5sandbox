@@ -1,4 +1,4 @@
-var CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
+let CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
 let table;
 
 function preload() {
@@ -18,7 +18,7 @@ function draw() {
   text("CSV: rows + columns", 20, 35);
   text("Rows: " + table.getRowCount() + " | Columns: " + table.getColumnCount(), 20, 60);
 
-  var columns = table.columns.join(", "); // Combines arrays into a string with commas!
+  let columns = table.columns.join(", "); // Combines arrays into a string with commas!
   text("Columns: " + columns, 20, 82);
 
   // Unstructured access: table.get(row, column) — no need to grab a row first
