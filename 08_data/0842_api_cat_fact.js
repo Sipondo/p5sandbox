@@ -3,13 +3,14 @@ let statusText = "";
 
 function setup() {
   createCanvas(900, 420);
-  textFont("monospace");
+  // Grab us an initial cat fact
   fetchCatFact();
 }
 
 function draw() {
   background(245);
 
+  // Bunch of drawing logic
   fill(20);
   textSize(22);
   text("Random Cat Fact", 20, 36);
@@ -28,19 +29,24 @@ function draw() {
 }
 
 function mousePressed() {
+  // New fact on mouse press
   fetchCatFact();
 }
 
 function fetchCatFact() {
+  // Status text while we wait for the response
   statusText = "Fetching...";
 
+  // Init the load request
   loadJSON(
     "https://catfact.ninja/fact",
     (data) => {
+      // Code on success
       catFact = data.fact || "No fact found.";
       statusText = "Loaded";
     },
     () => {
+      // Code on error
       catFact = "Could not fetch cat fact. Try again.";
       statusText = "Request failed";
     }
