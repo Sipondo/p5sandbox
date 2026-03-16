@@ -1,51 +1,39 @@
 var CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
 let table;
-let cities = ["Copenhagen", "Aarhus", "Odense", "Aalborg"];
+
+let cities = ["Copenhagen", "Aarhus", "Odense", "Aalborg"]; // Hardcoded list of cities. We could also grab this from the table directly!
 let cityIndex = 0;
 
 function preload() {
+  // Load our csv into a global variable
   table = loadTable(CSV_URL, "csv", "header");
 }
 
 function setup() {
-  createCanvas(900, 420);
-  textFont("monospace");
+  createCanvas(500, 420);
 }
 
 function draw() {
-  background(248);
-  var city = cities[cityIndex];
-
-  fill(20);
+  background(245);
   textSize(20);
-  text("CSV filtering", 20, 36);
-  textSize(14);
-  text("Press SPACE to switch city", 20, 60);
-  text("Current city: " + city, 20, 82);
 
-  let y = 120;
-  let sum = 0;
-  let count = 0;
+  // Select a city based on index
+  let city = cities[cityIndex];
+  text("City: " + city + "  (press SPACE to switch)", 20, 35);
 
-  for (let r = 0; r < table.getRowCount(); r++) {
-    var row = table.getRow(r);
-    if (row.get("city") === city) {
-      var week = row.get("week");
-      var temp = row.get("tempC");
-      var hum = row.get("humidity");
-      text("Week " + week + ": " + temp + "C, humidity " + hum + "%", 20, y);
-      y += 24;
-      sum += temp;
-      count += 1;
-    }
-  }
+  // Filter rows by the selected city
+  let rows = table.findRows(city, "city");
 
-  if (count > 0) {
-    text("Average temperature: " + nf(sum / count, 1, 2) + "C", 20, y + 12);
+  // Same display logic
+  for (let i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    var line = "week=" + row.get("week") + "  temp=" + row.get("tempC") + "C";
+    text(line, 20, 75 + i * 30);
   }
 }
 
 function keyPressed() {
+  // Swap on spacebar
   if (key === " ") {
     cityIndex = (cityIndex + 1) % cities.length;
   }

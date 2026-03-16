@@ -21,12 +21,8 @@ function draw() {
   var columns = table.columns.join(", "); // Combines arrays into a string with commas!
   text("Columns: " + columns, 20, 82);
 
-  // Loop over the actual data
-  for (let i = 0; i < min(8, table.getRowCount()); i++) {
-    var row = table.getRow(i);
-
-    // We print a few things here, concatenated with +.
-    var line = row.get("city") + "  week=" + row.get("week") + "  temp=" + row.get("tempC") + "C";
-    text(line, 20, 120 + i * 30);
-  }
+  // Unstructured access: table.get(row, column) — no need to grab a row first
+  text(table.get(0, "city"), 20, 120);
+  text(table.get(1, "city"), 20, 150);
+  text(table.get(0, "tempC"), 20, 180);
 }

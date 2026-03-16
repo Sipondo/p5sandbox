@@ -2,27 +2,29 @@ const JSON_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming
 let data;
 
 function preload() {
+  // Load our json data tree
   data = loadJSON(JSON_URL);
 }
 
 function setup() {
-  createCanvas(900, 420);
-  textFont("monospace");
+  createCanvas(600, 420);
 }
 
 function draw() {
   background(245);
-  fill(20);
   textSize(20);
-  text("JSON basics: objects and arrays", 20, 35);
-  textSize(14);
-
+  
+  // Display some stats
+  text("JSON: objects and arrays", 20, 35);
   const projects = data.projects;
   text("Projects loaded: " + projects.length, 20, 65);
 
+  // Loop over the data points
   for (let i = 0; i < projects.length; i++) {
     const p = projects[i];
-    const line = p.name + " | team: " + p.team.join("+") + " | tags: " + p.tags.join(", ");
+
+    // We print a few things here, concatenated with +.
+    const line = p.name + " | team: " + p.team.join("+") + " | tags: " + p.tags.join(", "); //join() turns the array into a string here
     text(line, 20, 105 + i * 28);
   }
 }
