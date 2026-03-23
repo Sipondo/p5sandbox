@@ -5,14 +5,15 @@ let names = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 
 function setup() {
   createCanvas(500, 420);
+  textAlign(CENTER);
 }
 
 function draw() {
   background(245);
 
-  fill(30);
-  textSize(18);
-  text("Study hours vs. exam score", 20, 30);
+  fill("black");
+  textSize(25);
+  text("Study hours vs. exam score", width / 2, 30);
 
   // Chart area
   let leftX = 60;
@@ -28,15 +29,12 @@ function draw() {
 
   // Axis labels
   noStroke();
-  fill(100);
-  textSize(12);
-  textAlign(CENTER, TOP);
+  fill("black");
   text("Hours studied", (leftX + rightX) / 2, bottomY + 20);
 
   push();
-  translate(15, (topY + bottomY) / 2);
+  translate(35, (topY + bottomY) / 2);
   rotate(-HALF_PI);
-  textAlign(CENTER);
   text("Exam score", 0, 0);
   pop();
 
@@ -51,16 +49,14 @@ function draw() {
     // Draw point
     noStroke();
     if (isHovered) {
-      fill(231, 76, 60);
+      fill("red");
       circle(x, y, 20);
 
       // Show tooltip
-      fill(50);
-      textSize(12);
-      textAlign(LEFT, BOTTOM);
-      text("Student " + names[i] + ": " + hours[i] + "h → " + scores[i] + "%", x + 14, y - 4);
+      fill("black");
+      text("Student " + names[i] + ": " + hours[i] + "h → " + scores[i] + "%", x + 14, y - 14);
     } else {
-      fill(52, 152, 219, 200);
+      fill("blue");
       circle(x, y, 14);
     }
   }
