@@ -1,4 +1,4 @@
-var MAP_URL = "https://rawcdn.githack.com/Sipondo/creative-programming-2026/57bf1d0b3f25b4baadde2c986a3f43a736b7afc2/lecture_8/media/denmark.jpg";
+let MAP_URL = "https://rawcdn.githack.com/Sipondo/creative-programming-2026/57bf1d0b3f25b4baadde2c986a3f43a736b7afc2/lecture_8/media/denmark.jpg";
 let denmarkMap;
 
 function preload() {
