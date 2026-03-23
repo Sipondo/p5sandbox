@@ -17,7 +17,7 @@
     if (!data) return;
 
     // Parse data once
-    if (trendValues.length === 0) {
+    if (trendValues.length == 0) {
 
         if (!data.hasOwnProperty("co2")){
         return

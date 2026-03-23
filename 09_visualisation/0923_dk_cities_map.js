@@ -21,10 +21,8 @@ function draw() {
   rect(0, 0, width, 55);
   fill("white");
   textSize(18);
-  textStyle(BOLD);
   textAlign(LEFT, CENTER);
   text("Danish City Temperatures", 15, 18);
-  textStyle(NORMAL);
   textSize(11);
   text("Week 4 comparison across cities", 15, 40);
 
@@ -32,7 +30,7 @@ function draw() {
   let cities = [];
   for (let i = 0; i < table.getRowCount(); i++) {
     let row = table.getRow(i);
-    if (row.getNum("week") === 4) {
+    if (row.getNum("week") == 4) {
       cities.push({
         name: row.getString("city"),
         temp: row.getNum("tempC"),
@@ -74,10 +72,8 @@ function draw() {
     noStroke();
     fill(stats[i].col);
     textSize(20);
-    textStyle(BOLD);
     textAlign(CENTER, CENTER);
     text(stats[i].value, x + boxW / 2, 84);
-    textStyle(NORMAL);
     fill("grey");
     textSize(10);
     text(stats[i].label, x + boxW / 2, 106);
@@ -92,10 +88,8 @@ function draw() {
 
   fill("black");
   textSize(12);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   text("Temperature (°C) — Week 4", barStartX, chartTop - 5);
-  textStyle(NORMAL);
 
   for (let i = 0; i < cities.length; i++) {
     let x = barStartX + i * (barW + barGap);
@@ -129,10 +123,8 @@ function draw() {
   noStroke();
   fill("black");
   textSize(12);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   text("Humidity (%) — Week 4", barStartX, dotTop - 5);
-  textStyle(NORMAL);
 
   for (let i = 0; i < cities.length; i++) {
     let x = barStartX + i * (barW + barGap) + barW / 2;

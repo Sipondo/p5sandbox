@@ -1,4 +1,4 @@
-// Live weather dashboard for Danish cities using Open-Meteo API (no key needed!)
+// Live weather dashboard for Danish cities using Open-Meteo API
 let cities = [
   { name: "Copenhagen", lat: 55.6761, lon: 12.5683 },
   { name: "Aarhus", lat: 56.1629, lon: 10.2039 },
@@ -32,7 +32,7 @@ function setup() {
           minTemps: data.daily.temperature_2m_min,
           days: data.daily.time
         });
-        if (weatherData.length === cities.length) {
+        if (weatherData.length == cities.length) {
           loaded = true;
         }
       }
@@ -49,10 +49,8 @@ function draw() {
   rect(0, 0, width, 55);
   fill(255);
   textSize(18);
-  textStyle(BOLD);
   textAlign(LEFT, CENTER);
   text("Denmark — Live Weather", 15, 18);
-  textStyle(NORMAL);
   textSize(11);
   fill(200);
   text("Data from Open-Meteo API (updates every load)", 15, 40);
@@ -88,10 +86,10 @@ function draw() {
     noStroke();
     fill(60);
     textSize(11);
-    textStyle(BOLD);
+
     textAlign(CENTER, TOP);
     text(w.name, x + cardW / 2, cardY + 6);
-    textStyle(NORMAL);
+
 
     // Temperature (big)
     let tempCol = lerpColor(color(52, 152, 219), color(231, 76, 60), map(w.temp, -5, 25, 0, 1));
@@ -114,11 +112,9 @@ function draw() {
 
   fill(50);
   textSize(12);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   noStroke();
   text("7-day forecast (°C)", chartLeft, chartTop - 6);
-  textStyle(NORMAL);
 
   // Grid
   stroke(220);
@@ -193,11 +189,9 @@ function draw() {
 
   fill(50);
   textSize(11);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   noStroke();
   text("Current wind speed (km/h)", barStartX, windTop - 4);
-  textStyle(NORMAL);
 
   for (let i = 0; i < weatherData.length; i++) {
     let x = barStartX + i * (barW + barGap);
@@ -217,13 +211,6 @@ function draw() {
     textSize(9);
     text(w.name, x + barW / 2, windBottom + 12);
   }
-
-  // Footer
-  fill(180);
-  textSize(8);
-  textAlign(RIGHT, BOTTOM);
-  noStroke();
-  text("Source: Open-Meteo API (api.open-meteo.com) — no API key needed", width - 8, height - 3);
 }
 
 function mousePressed() {

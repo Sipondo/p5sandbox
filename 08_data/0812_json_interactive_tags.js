@@ -40,8 +40,8 @@ function draw() {
 
 function keyPressed() {
   // Set the filter
-  if (key === "1") activeTag = "visual";
-  if (key === "2") activeTag = "audio";
-  if (key === "3") activeTag = "data";
-  if (key === "4") activeTag = "game";
+  if (key == "1") activeTag = "visual";
+  if (key == "2") activeTag = "audio";
+  if (key == "3") activeTag = "data";
+  if (key == "4") activeTag = "game";
 }

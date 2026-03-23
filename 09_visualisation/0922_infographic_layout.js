@@ -20,10 +20,8 @@ function draw() {
   rect(0, 0, width, 60);
   fill("white");
   textSize(20);
-  textStyle(BOLD);
   textAlign(LEFT, CENTER);
   text("Copenhagen Weather", 20, 22);
-  textStyle(NORMAL);
   textSize(12);
   text("Week of March 16 – 22, 2026", 20, 44);
 
@@ -57,10 +55,8 @@ function draw() {
     noStroke();
     fill(stats[i].col);
     textSize(22);
-    textStyle(BOLD);
     textAlign(CENTER, CENTER);
     text(stats[i].value, x + boxW / 2, 96);
-    textStyle(NORMAL);
     fill("grey");
     textSize(11);
     text(stats[i].label, x + boxW / 2, 118);
@@ -75,11 +71,9 @@ function draw() {
 
   fill("black");
   textSize(12);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   noStroke();
   text("Temperature (°C)", chartLeft, chartTop - 5);
-  textStyle(NORMAL);
 
   // Line segments
   stroke(231, 76, 60);
@@ -120,10 +114,8 @@ function draw() {
 
   fill("black");
   textSize(12);
-  textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
   text("Rainfall (mm)", chartLeft, rainTop - 5);
-  textStyle(NORMAL);
 
   let barW = 30;
   for (let i = 0; i < 7; i++) {

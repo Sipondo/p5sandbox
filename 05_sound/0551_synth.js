@@ -30,7 +30,7 @@ function draw() {
 		addCircleForNote(note);
 
 		let waitFrames = noteDelays[currentNoteIndex];
-		if (waitFrames === undefined || waitFrames < 1) {
+		if (waitFrames == undefined || waitFrames < 1) {
 			waitFrames = 20;
 		}
 
@@ -74,7 +74,7 @@ function keyPressed() {
 
 		tune.push(note);
 
-		if (tune.length === 1) {
+		if (tune.length == 1) {
 			noteDelays.push(20);
 		} else {
 			let delayFrames = max(1, frameCount - lastNoteFrame);
@@ -84,7 +84,7 @@ function keyPressed() {
 		lastNoteFrame = frameCount;
 	}
 
-	if (key === " ") {
+	if (key == " ") {
 		if (tune.length > 0) {
 			isPlayingBack = !isPlayingBack;
 			currentNoteIndex = 0;
@@ -92,7 +92,7 @@ function keyPressed() {
 		}
 	}
 
-	if (key === "r" || key === "R") {
+	if (key == "r" || key == "R") {
 		tune = [];
 		noteDelays = [];
 		isPlayingBack = false;

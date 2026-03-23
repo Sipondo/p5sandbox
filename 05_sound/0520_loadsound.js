@@ -27,15 +27,15 @@ function draw() {
 function keyPressed() {
 	userStartAudio(); // Start audio
 
-	if (key === "c" || key === "C") {
+	if (key == "c" || key == "C") {
 		cymbal.play(); // Play on C key
 	}
 
-	if (key === "d" || key === "D") {
+	if (key == "d" || key == "D") {
 		drum.play(); // Play on D key
 	}
 
-	if (key === "s" || key === "S") {
+	if (key == "s" || key == "S") {
 		snare.play(); // Play on S key
 	}
 }

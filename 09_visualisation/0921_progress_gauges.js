@@ -25,10 +25,8 @@ function draw() {
   // Title
   fill("black");
   textSize(18);
-  textStyle(BOLD);
   textAlign(LEFT, TOP);
   text("Daily wellness tracker", 20, 20);
-  textStyle(NORMAL);
   textSize(12);
   fill("grey");
   text("Monday, March 23", 20, 44);
@@ -56,7 +54,6 @@ function draw() {
 
     // Progress arc
     stroke(colours[i]);
-    strokeCap(ROUND);
     let endAngle = -90 + 360 * animPct;
     if (animPct > 0.001) {
       arc(cx, centerY, gaugeSize, gaugeSize, -90, endAngle);
@@ -67,9 +64,7 @@ function draw() {
     fill("black");
     textAlign(CENTER, CENTER);
     textSize(16);
-    textStyle(BOLD);
     text(round(pct * 100) + "%", cx, centerY - 6);
-    textStyle(NORMAL);
     textSize(10);
     fill("grey");
     text(goal.label, cx, centerY + 12);

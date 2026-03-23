@@ -14,7 +14,7 @@ function draw() {
   if (!data) return;
 
   // Parse data once
-  if (landValues.length === 0) {
+  if (landValues.length == 0) {
     if (!data.hasOwnProperty("result")) return;
 
     for (let row of data.result) {

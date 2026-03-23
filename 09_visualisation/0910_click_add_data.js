@@ -15,7 +15,7 @@ function draw() {
   textSize(16);
   text("Click to add data, press 'r' to reset", width / 2, 25);
 
-  if (values.length === 0) {
+  if (values.length == 0) {
     fill("grey");
     textSize(14);
     text("Click anywhere to start adding bars!", width / 2, height / 2);
@@ -70,7 +70,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  if (key === "r" || key === "R") {
+  if (key == "r" || key == "R") {
     labels = [];
     values = [];
     counter = 0;

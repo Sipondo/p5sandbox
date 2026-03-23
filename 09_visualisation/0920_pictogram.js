@@ -5,7 +5,6 @@ let colours;
 function setup() {
   createCanvas(500, 420);
   noStroke();
-  noLoop();
   colours = [
     color(46, 204, 113),
     color(52, 152, 219),
@@ -21,10 +20,8 @@ function draw() {
   // Title
   fill("black");
   textSize(18);
-  textStyle(BOLD);
   textAlign(LEFT, CENTER);
   text("How do students get to campus?", 20, 30);
-  textStyle(NORMAL);
   textSize(12);
   fill("grey");
   text("Each icon = 5 students (out of 100 surveyed)", 20, 52);
@@ -49,6 +46,7 @@ function draw() {
       let x = 90 + j * iconSpacing;
       fill(colours[i]);
       // Simple person icon: head + body
+      // For more complicated symbols, use an object or function!
       circle(x + iconSize / 2, y, iconSize * 0.4);
       rect(x + iconSize / 2 - 3, y + iconSize * 0.25, 6, iconSize * 0.45, 2);
     }

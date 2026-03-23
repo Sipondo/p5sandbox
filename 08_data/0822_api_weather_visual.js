@@ -16,7 +16,7 @@ function draw() {
   textSize(14);
   text("Copenhagen weather from Open-Meteo (press R to refresh)", 20, 60);
 
-  if (tempC === null || wind === null) {
+  if (tempC == null || wind == null) {
     text(statusText, 20, 90);
     return;
   }
@@ -55,5 +55,5 @@ function fetchWeather() {
 }
 
 function keyPressed() {
-  if (key === "r" || key === "R") fetchWeather();
+  if (key == "r" || key == "R") fetchWeather();
 }

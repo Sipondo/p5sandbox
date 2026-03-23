@@ -36,11 +36,11 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key === 'b' || key === 'B') {
+  if (key == 'b' || key == 'B') {
     speed = undefined;
     console.log('speed set to undefined');
   }
-  if (key === 'r' || key === 'R') {
+  if (key == 'r' || key == 'R') {
     speed = 2;
     x = width / 2;
     console.log('values reset');

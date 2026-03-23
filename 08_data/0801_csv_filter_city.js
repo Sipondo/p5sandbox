@@ -34,7 +34,7 @@ function draw() {
 
 function keyPressed() {
   // Swap on spacebar
-  if (key === " ") {
+  if (key == " ") {
     cityIndex = (cityIndex + 1) % cities.length;
   }
 }

@@ -81,9 +81,7 @@ function draw() {
   fill("white");
   textSize(min(width, height) * 0.06);
   textAlign(CENTER, CENTER);
-  textStyle(BOLD);
   text("Data Visualisation", width / 2, height * 0.45);
-  textStyle(NORMAL);
   textSize(min(width, height) * 0.025);
   fill(200);
   text("Lecture 9", width / 2, height * 0.53);
