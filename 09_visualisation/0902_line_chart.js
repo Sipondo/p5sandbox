@@ -36,17 +36,16 @@ function draw() {
     strokeWeight(0.5);
   }
 
-  // Draw line connecting all points
-  noFill();
+  // Draw lines connecting consecutive points
   stroke(231, 76, 60);
   strokeWeight(2.5);
-  beginShape();
-  for (let i = 0; i < temps.length; i++) {
-    let x = map(i, 0, temps.length - 1, leftX + 20, rightX - 20);
-    let y = map(temps[i], 0, maxVal, bottomY, topY);
-    vertex(x, y);
+  for (let i = 0; i < temps.length - 1; i++) {
+    let x1 = map(i, 0, temps.length - 1, leftX + 20, rightX - 20);
+    let y1 = map(temps[i], 0, maxVal, bottomY, topY);
+    let x2 = map(i + 1, 0, temps.length - 1, leftX + 20, rightX - 20);
+    let y2 = map(temps[i + 1], 0, maxVal, bottomY, topY);
+    line(x1, y1, x2, y2);
   }
-  endShape();
 
   // Draw points and labels
   for (let i = 0; i < temps.length; i++) {
