@@ -2,13 +2,13 @@
 let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let temps = [4, 6, 5, 8, 10, 9, 7];
 let rain = [2, 0, 5, 1, 0, 0, 3]; // mm
-let wind = [15, 10, 20, 12, 8, 5, 18]; // km/h
 let sunny = [false, true, false, true, true, true, false];
 
 let animProgress = 0;
 
 function setup() {
   createCanvas(500, 420);
+  noStroke();
 }
 
 function draw() {
@@ -16,10 +16,9 @@ function draw() {
   animProgress = lerp(animProgress, 1, 0.025);
 
   // --- Header ---
-  noStroke();
   fill(41, 128, 185);
   rect(0, 0, width, 60);
-  fill(255);
+  fill("white");
   textSize(20);
   textStyle(BOLD);
   textAlign(LEFT, CENTER);
@@ -50,7 +49,7 @@ function draw() {
   let boxX = (width - (boxW * 3 + boxGap * 2)) / 2;
   for (let i = 0; i < stats.length; i++) {
     let x = boxX + i * (boxW + boxGap);
-    fill(255);
+    fill("white");
     stroke(220);
     strokeWeight(1);
     rect(x, 75, boxW, 60, 8);
@@ -62,7 +61,7 @@ function draw() {
     textAlign(CENTER, CENTER);
     text(stats[i].value, x + boxW / 2, 96);
     textStyle(NORMAL);
-    fill(100);
+    fill("grey");
     textSize(11);
     text(stats[i].label, x + boxW / 2, 118);
   }
@@ -72,8 +71,9 @@ function draw() {
   let chartRight = width - 30;
   let chartTop = 160;
   let chartBottom = 260;
+  let spacing = (chartRight - chartLeft - 20) / 6;
 
-  fill(50);
+  fill("black");
   textSize(12);
   textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
@@ -81,48 +81,33 @@ function draw() {
   text("Temperature (°C)", chartLeft, chartTop - 5);
   textStyle(NORMAL);
 
-  // Grid
-  stroke(210);
-  strokeWeight(0.5);
-  for (let t = 0; t <= 12; t += 4) {
-    let y = map(t, 0, 12, chartBottom, chartTop);
-    line(chartLeft, y, chartRight, y);
-    noStroke();
-    fill(150);
-    textSize(9);
-    textAlign(RIGHT, CENTER);
-    text(t, chartLeft - 5, y);
-    stroke(210);
-    strokeWeight(0.5);
-  }
-
-  // Line
-  noFill();
+  // Line segments
   stroke(231, 76, 60);
   strokeWeight(2.5);
-  beginShape();
-  for (let i = 0; i < 7; i++) {
-    let x = map(i, 0, 6, chartLeft + 10, chartRight - 10);
-    let y = map(temps[i] * animProgress, 0, 12, chartBottom, chartTop);
-    vertex(x, y);
+  let scale = (chartBottom - chartTop) / 12;
+  for (let i = 0; i < 6; i++) {
+    let x1 = chartLeft + 10 + i * spacing;
+    let y1 = chartBottom - temps[i] * animProgress * scale;
+    let x2 = chartLeft + 10 + (i + 1) * spacing;
+    let y2 = chartBottom - temps[i + 1] * animProgress * scale;
+    line(x1, y1, x2, y2);
   }
-  endShape();
 
   // Points + day labels
+  noStroke();
   for (let i = 0; i < 7; i++) {
-    let x = map(i, 0, 6, chartLeft + 10, chartRight - 10);
-    let y = map(temps[i] * animProgress, 0, 12, chartBottom, chartTop);
+    let x = chartLeft + 10 + i * spacing;
+    let y = chartBottom - temps[i] * animProgress * scale;
 
-    // Weather icon
+    // Weather icon colour
     if (sunny[i]) {
       fill(241, 196, 15);
     } else {
       fill(180, 200, 220);
     }
-    noStroke();
     circle(x, y, 14);
 
-    fill(50);
+    fill("black");
     textAlign(CENTER, TOP);
     textSize(10);
     text(days[i], x, chartBottom + 5);
@@ -131,39 +116,38 @@ function draw() {
   // --- Rain bar chart ---
   let rainTop = 300;
   let rainBottom = 380;
+  let rainScale = (rainBottom - rainTop) / 6;
 
-  fill(50);
+  fill("black");
   textSize(12);
   textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
-  noStroke();
   text("Rainfall (mm)", chartLeft, rainTop - 5);
   textStyle(NORMAL);
 
   let barW = 30;
   for (let i = 0; i < 7; i++) {
-    let x = map(i, 0, 6, chartLeft + 10, chartRight - 10);
-    let h = map(rain[i] * animProgress, 0, 6, 0, rainBottom - rainTop);
+    let x = chartLeft + 10 + i * spacing;
+    let h = rain[i] * animProgress * rainScale;
 
     fill(52, 152, 219, 180);
-    noStroke();
     rect(x - barW / 2, rainBottom - h, barW, h, 3, 3, 0, 0);
 
     if (rain[i] > 0) {
-      fill(50);
+      fill("black");
       textSize(9);
       textAlign(CENTER, BOTTOM);
       text(rain[i] + "mm", x, rainBottom - h - 3);
     }
 
-    fill(100);
+    fill("grey");
     textAlign(CENTER, TOP);
     textSize(10);
     text(days[i], x, rainBottom + 4);
   }
 
   // Footer
-  fill(180);
+  fill("grey");
   textSize(9);
   textAlign(RIGHT, BOTTOM);
   text("Data: fictional | Made with p5.js", width - 10, height - 5);

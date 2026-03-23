@@ -4,20 +4,20 @@ let counter = 0;
 
 function setup() {
   createCanvas(500, 420);
+  textAlign(CENTER);
+  noStroke();
 }
 
 function draw() {
   background(245);
 
-  fill(30);
+  fill("black");
   textSize(16);
-  textAlign(LEFT);
-  text("Click to add data, press 'r' to reset", 20, 25);
+  text("Click to add data, press 'r' to reset", width / 2, 25);
 
   if (values.length === 0) {
-    fill(150);
+    fill("grey");
     textSize(14);
-    textAlign(CENTER, CENTER);
     text("Click anywhere to start adding bars!", width / 2, height / 2);
     return;
   }
@@ -43,14 +43,12 @@ function draw() {
     let barHeight = map(values[i], 0, maxVal, 0, 300);
 
     fill(52, 152, 219);
-    noStroke();
     rect(x, bottomY - barHeight, barWidth, barHeight, 3, 3, 0, 0);
 
     // Label
-    fill(100);
+    fill("black");
     textSize(max(9, 12 - maxBars * 0.3));
-    textAlign(CENTER, TOP);
-    text(labels[i], x + barWidth / 2, bottomY + 4);
+    text(labels[i], x + barWidth / 2, bottomY + 14);
   }
 
   // Baseline
@@ -60,10 +58,9 @@ function draw() {
 
   // Count
   noStroke();
-  fill(150);
+  fill("grey");
   textSize(11);
-  textAlign(RIGHT, BOTTOM);
-  text(values.length + " data points", width - 10, height - 8);
+  text(values.length + " data points", width / 2, height - 8);
 }
 
 function mousePressed() {

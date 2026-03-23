@@ -10,19 +10,20 @@ let cities = [
 
 function setup() {
   createCanvas(500, 420);
+  textAlign(CENTER);
+  noStroke();
 }
 
 function draw() {
   background(245);
 
-  fill(30);
+  fill("black");
   textSize(16);
-  textAlign(LEFT);
-  text("Danish cities: area vs. population", 20, 25);
+  text("Danish cities: area vs. population", width / 2, 25);
 
   textSize(10);
-  fill(120);
-  text("x = area  |  y = population  |  size & color = population", 20, 44);
+  fill("grey");
+  text("x = area  |  y = population  |  size & colour = population", width / 2, 44);
 
   // Chart area
   let leftX = 60;
@@ -37,10 +38,9 @@ function draw() {
   line(leftX, topY, leftX, bottomY);
 
   noStroke();
-  fill(140);
+  fill("grey");
   textSize(10);
-  textAlign(CENTER, TOP);
-  text("Area (km²)", (leftX + rightX) / 2, bottomY + 10);
+  text("Area (km²)", (leftX + rightX) / 2, bottomY + 14);
 
   for (let i = 0; i < cities.length; i++) {
     let c = cities[i];
@@ -49,7 +49,7 @@ function draw() {
     let x = map(c.area, 0, 1200, leftX + 20, rightX - 20);
     let y = map(c.pop, 0, 700, bottomY, topY);
 
-    // Map population to size and color
+    // Map population to size and colour
     let size = map(c.pop, 60, 650, 20, 70);
     let blue = map(c.pop, 60, 650, 220, 40);
 
@@ -59,9 +59,8 @@ function draw() {
     circle(x, y, size);
 
     // Label
-    fill(40);
+    fill("black");
     textSize(11);
-    textAlign(CENTER, BOTTOM);
-    text(c.name, x, y - size / 2 - 4);
+    text(c.name, x, y - size / 2 - 6);
   }
 }

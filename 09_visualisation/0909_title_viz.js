@@ -1,10 +1,11 @@
 // Dynamic title page: animated data visualisation collage
 let bars = [];
 let dots = [];
-let angles = [];
+let slices = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  angleMode(DEGREES);
 
   // Generate random bar data
   for (let i = 0; i < 8; i++) {
@@ -21,9 +22,9 @@ function setup() {
     });
   }
 
-  // Generate pie angles
+  // Generate pie slices
   for (let i = 0; i < 5; i++) {
-    angles.push(random(0.5, 2));
+    slices.push(random(0.5, 2));
   }
 }
 
@@ -36,6 +37,7 @@ function draw() {
   let barW = width * 0.04;
   let barGap = width * 0.015;
 
+  noStroke();
   for (let i = 0; i < bars.length; i++) {
     bars[i].current = lerp(bars[i].current, bars[i].target, 0.02);
     let x = barX + i * (barW + barGap);
@@ -43,7 +45,6 @@ function draw() {
 
     let c = lerpColor(color(52, 152, 219), color(46, 204, 113), i / bars.length);
     fill(c);
-    noStroke();
     rect(x, barBottom - h, barW, h, 3, 3, 0, 0);
   }
 
@@ -51,7 +52,6 @@ function draw() {
   for (let i = 0; i < dots.length; i++) {
     let d = dots[i];
     fill(d.col);
-    noStroke();
     circle(d.x, d.y, d.size);
   }
 
@@ -60,26 +60,25 @@ function draw() {
   let pieY = height * 0.75;
   let pieSize = min(width, height) * 0.25;
   let total = 0;
-  for (let i = 0; i < angles.length; i++) total += angles[i];
+  for (let i = 0; i < slices.length; i++) total += slices[i];
 
-  let a = -HALF_PI;
-  let pieColors = [
+  let a = -90; // start from top
+  let pieColours = [
     color(231, 76, 60),
     color(241, 196, 15),
     color(46, 204, 113),
     color(52, 152, 219),
     color(155, 89, 182)
   ];
-  for (let i = 0; i < angles.length; i++) {
-    let sliceAngle = map(angles[i], 0, total, 0, TWO_PI);
-    fill(pieColors[i]);
-    noStroke();
+  for (let i = 0; i < slices.length; i++) {
+    let sliceAngle = map(slices[i], 0, total, 0, 360);
+    fill(pieColours[i]);
     arc(pieX, pieY, pieSize, pieSize, a, a + sliceAngle, PIE);
     a += sliceAngle;
   }
 
   // Title text
-  fill(255);
+  fill("white");
   textSize(min(width, height) * 0.06);
   textAlign(CENTER, CENTER);
   textStyle(BOLD);

@@ -4,6 +4,7 @@ let colours;
 
 function setup() {
   createCanvas(500, 420);
+  angleMode(DEGREES);
   colours = [
     color(231, 76, 60),
     color(52, 152, 219),
@@ -16,7 +17,7 @@ function setup() {
 function draw() {
   background(245);
 
-  fill(30);
+  fill("black");
   textSize(18);
   textAlign(LEFT);
   text("Monthly budget breakdown", 20, 30);
@@ -31,10 +32,10 @@ function draw() {
   let cx = 200;
   let cy = 230;
   let diameter = 250;
-  let angle = -HALF_PI; // start from top
+  let angle = -90; // start from top
 
   for (let i = 0; i < values.length; i++) {
-    let sliceAngle = map(values[i], 0, total, 0, TWO_PI);
+    let sliceAngle = map(values[i], 0, total, 0, 360);
 
     // Draw slice
     fill(colours[i]);
@@ -47,7 +48,7 @@ function draw() {
     let lx = cx + cos(labelAngle) * labelDist;
     let ly = cy + sin(labelAngle) * labelDist;
 
-    fill(50);
+    fill("black");
     textSize(12);
     textAlign(CENTER, CENTER);
     text(labels[i] + " " + values[i] + "%", lx, ly);
@@ -62,7 +63,7 @@ function draw() {
     fill(colours[i]);
     noStroke();
     rect(lx, ly, 14, 14, 3);
-    fill(80);
+    fill("black");
     textSize(12);
     textAlign(LEFT, CENTER);
     text(labels[i], lx + 22, ly + 7);

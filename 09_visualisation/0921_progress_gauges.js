@@ -6,11 +6,12 @@ let goals = [
 ];
 
 let animProgress = 0;
-let colors;
+let colours;
 
 function setup() {
   createCanvas(500, 420);
-  colors = [
+  angleMode(DEGREES);
+  colours = [
     color(46, 204, 113),
     color(52, 152, 219),
     color(155, 89, 182),
@@ -22,14 +23,14 @@ function draw() {
   background(245);
 
   // Title
-  fill(30);
+  fill("black");
   textSize(18);
   textStyle(BOLD);
   textAlign(LEFT, TOP);
   text("Daily wellness tracker", 20, 20);
   textStyle(NORMAL);
   textSize(12);
-  fill(120);
+  fill("grey");
   text("Monday, March 23", 20, 44);
 
   // Animate in
@@ -51,26 +52,26 @@ function draw() {
     noFill();
     strokeWeight(10);
     stroke(220);
-    arc(cx, centerY, gaugeSize, gaugeSize, -HALF_PI, -HALF_PI + TWO_PI);
+    arc(cx, centerY, gaugeSize, gaugeSize, -90, -90 + 360);
 
     // Progress arc
-    stroke(colors[i]);
+    stroke(colours[i]);
     strokeCap(ROUND);
-    let endAngle = -HALF_PI + TWO_PI * animPct;
+    let endAngle = -90 + 360 * animPct;
     if (animPct > 0.001) {
-      arc(cx, centerY, gaugeSize, gaugeSize, -HALF_PI, endAngle);
+      arc(cx, centerY, gaugeSize, gaugeSize, -90, endAngle);
     }
 
-    // Center text
+    // Centre text
     noStroke();
-    fill(30);
+    fill("black");
     textAlign(CENTER, CENTER);
     textSize(16);
     textStyle(BOLD);
     text(round(pct * 100) + "%", cx, centerY - 6);
     textStyle(NORMAL);
     textSize(10);
-    fill(120);
+    fill("grey");
     text(goal.label, cx, centerY + 12);
   }
 
@@ -86,7 +87,7 @@ function draw() {
     let animPct = pct * animProgress;
 
     // Label
-    fill(50);
+    fill("black");
     textAlign(LEFT, CENTER);
     textSize(12);
     text(goal.label, 20, y + barHeight / 2);
@@ -99,18 +100,18 @@ function draw() {
     rect(barX, y, barW, barHeight, 10);
 
     // Bar fill
-    fill(colors[i]);
+    fill(colours[i]);
     rect(barX, y, barW * animPct, barHeight, 10);
 
     // Value text
-    fill(80);
+    fill("black");
     textAlign(LEFT, CENTER);
     textSize(11);
     text(goal.current + goal.unit + " / " + goal.target + goal.unit, barX + barW + 10, y + barHeight / 2);
   }
 
   // Click to reset
-  fill(180);
+  fill("grey");
   textAlign(LEFT, BOTTOM);
   textSize(11);
   text("Click to replay animation", 20, height - 10);

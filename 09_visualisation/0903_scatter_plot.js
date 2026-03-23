@@ -6,6 +6,7 @@ let names = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 function setup() {
   createCanvas(500, 420);
   textAlign(CENTER);
+  angleMode(DEGREES);
 }
 
 function draw() {
@@ -34,7 +35,7 @@ function draw() {
 
   push();
   translate(35, (topY + bottomY) / 2);
-  rotate(-HALF_PI);
+  rotate(-90);
   text("Exam score", 0, 0);
   pop();
 

@@ -7,14 +7,16 @@ function preload() {
 
 function setup() {
   createCanvas(500, 420);
+  textAlign(CENTER);
+  noStroke();
 }
 
 function draw() {
   background(245);
 
-  fill(30);
+  fill("black");
   textSize(18);
-  text("Music events: attendees", 20, 30);
+  text("Music events: attendees", width / 2, 30);
 
   let startX = 40;
   let bottomY = 360;
@@ -34,18 +36,14 @@ function draw() {
 
     // Bar
     fill(52, 152, 219);
-    noStroke();
     rect(x, bottomY - barHeight, barWidth, barHeight, 4, 4, 0, 0);
 
     // Value
-    fill(50);
+    fill("black");
     textSize(12);
-    textAlign(CENTER);
     text(attendees, x + barWidth / 2, bottomY - barHeight - 8);
 
     // Label
-    fill(100);
-    textSize(11);
     text(name, x + barWidth / 2, bottomY + 16);
   }
 
@@ -56,8 +54,7 @@ function draw() {
 
   // Source note
   noStroke();
-  fill(180);
+  fill("grey");
   textSize(10);
-  textAlign(LEFT, BOTTOM);
-  text("Data loaded from CSV (lecture 8)", 20, height - 8);
+  text("Data loaded from CSV (lecture 8)", width / 2, height - 8);
 }

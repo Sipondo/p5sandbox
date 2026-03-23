@@ -1,4 +1,4 @@
-// Danish cities infographic using CSV from SimpleMaps
+// Danish cities infographic using CSV from lecture 8
 let CSV_URL = "https://raw.githubusercontent.com/Sipondo/creative-programming-2026/refs/heads/main/lecture_8/data/city_temperatures.csv";
 let table;
 let animProgress = 0;
@@ -9,6 +9,7 @@ function preload() {
 
 function setup() {
   createCanvas(500, 420);
+  noStroke();
 }
 
 function draw() {
@@ -16,10 +17,9 @@ function draw() {
   animProgress = lerp(animProgress, 1, 0.025);
 
   // Header
-  noStroke();
   fill(41, 128, 185);
   rect(0, 0, width, 55);
-  fill(255);
+  fill("white");
   textSize(18);
   textStyle(BOLD);
   textAlign(LEFT, CENTER);
@@ -66,7 +66,7 @@ function draw() {
   let boxX = (width - (boxW * 3 + boxGap * 2)) / 2;
   for (let i = 0; i < stats.length; i++) {
     let x = boxX + i * (boxW + boxGap);
-    fill(255);
+    fill("white");
     stroke(220);
     strokeWeight(1);
     rect(x, 68, boxW, 52, 6);
@@ -78,7 +78,7 @@ function draw() {
     textAlign(CENTER, CENTER);
     text(stats[i].value, x + boxW / 2, 84);
     textStyle(NORMAL);
-    fill(120);
+    fill("grey");
     textSize(10);
     text(stats[i].label, x + boxW / 2, 106);
   }
@@ -90,11 +90,10 @@ function draw() {
   let barW = 70;
   let barGap = 20;
 
-  fill(50);
+  fill("black");
   textSize(12);
   textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
-  noStroke();
   text("Temperature (°C) — Week 4", barStartX, chartTop - 5);
   textStyle(NORMAL);
 
@@ -102,21 +101,19 @@ function draw() {
     let x = barStartX + i * (barW + barGap);
     let h = map(cities[i].temp * animProgress, 0, 15, 0, chartBottom - chartTop);
 
-    // Color by temperature
+    // Colour by temperature
     let r = map(cities[i].temp, 5, 12, 80, 231);
     let g = map(cities[i].temp, 5, 12, 150, 90);
     fill(r, g, 80);
-    noStroke();
     rect(x, chartBottom - h, barW, h, 4, 4, 0, 0);
 
     // Value
-    fill(50);
+    fill("black");
     textSize(12);
     textAlign(CENTER);
     text(cities[i].temp + "°", x + barW / 2, chartBottom - h - 6);
 
     // Label
-    fill(100);
     textSize(10);
     text(cities[i].name, x + barW / 2, chartBottom + 14);
   }
@@ -129,8 +126,8 @@ function draw() {
   let dotTop = 330;
   let dotBottom = 395;
 
-  fill(50);
   noStroke();
+  fill("black");
   textSize(12);
   textStyle(BOLD);
   textAlign(LEFT, BOTTOM);
@@ -143,24 +140,22 @@ function draw() {
     let size = map(cities[i].humidity * animProgress, 0, 100, 10, 55);
 
     fill(52, 152, 219, 150);
-    noStroke();
     circle(x, y, size);
 
-    fill(40);
+    fill("black");
     textSize(10);
     textAlign(CENTER, CENTER);
     text(cities[i].humidity + "%", x, y);
 
-    fill(100);
+    fill("grey");
     textAlign(CENTER, TOP);
     text(cities[i].name, x, dotBottom + 2);
   }
 
   // Footer
-  fill(180);
+  fill("grey");
   textSize(9);
   textAlign(RIGHT, BOTTOM);
-  noStroke();
   text("Data: city_temperatures.csv (lecture 8)", width - 10, height - 5);
 }
 

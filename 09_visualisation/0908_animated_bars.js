@@ -4,14 +4,16 @@ let currentValues = [0, 0, 0, 0, 0, 0];
 
 function setup() {
   createCanvas(500, 420);
+  textAlign(CENTER);
+  noStroke();
 }
 
 function draw() {
   background(245);
 
-  fill(30);
+  fill("black");
   textSize(18);
-  text("Animated bar chart (click to reset)", 20, 30);
+  text("Animated bar chart (click to reset)", width / 2, 30);
 
   let startX = 40;
   let bottomY = 370;
@@ -28,18 +30,14 @@ function draw() {
 
     // Bar
     fill(46, 204, 113);
-    noStroke();
     rect(x, bottomY - barHeight, barWidth, barHeight, 4, 4, 0, 0);
 
     // Value
-    fill(50);
+    fill("black");
     textSize(12);
-    textAlign(CENTER);
     text(round(currentValues[i]), x + barWidth / 2, bottomY - barHeight - 8);
 
     // Label
-    fill(100);
-    textSize(12);
     text(labels[i], x + barWidth / 2, bottomY + 18);
   }
 
