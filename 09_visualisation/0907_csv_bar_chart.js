@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500, 420);
+  createCanvas(600, 420);
   textAlign(CENTER);
   noStroke();
 }
